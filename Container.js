@@ -1,5 +1,5 @@
 import React from "react";
-import CalculatorBase from "./src/CalculatorBase";
+import CalculatorBase from "./src/screens/CalculatorBase";
 
 export default function Container() {
   return <CalculatorBase />;

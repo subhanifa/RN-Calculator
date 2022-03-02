@@ -8,7 +8,7 @@ import {
   AddIcon,
   MinusIcon,
 } from "native-base";
-import { CalculatorButton, CalculatorOperator } from "./CalculatorButtons";
+import { CalculatorButton, CalculatorOperator } from "../components/CalculatorButtons";
 
 export default function CalculatorBase() {
   return (
