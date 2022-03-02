@@ -1,36 +1,47 @@
 import React from "react";
 import { Text, Button } from "native-base";
 
-export function CalculatorButton({ value }) {
+export function CalculatorButton({ value, col }) {
   return (
     <Button
-      width={16}
-      height={16}
-      bg="white"
-      borderRadius={5}
+      flex={col}
+      bg="gray.200"
+      _text={{ fontWeight: "bold", fontSize: 32, color: "gray.700" }}
+      borderRadius={7}
       alignItems="center"
       justifyContent="center"
-      _pressed={{ background: "gray.400" }}
+      _pressed={{
+        background: "gray.100",
+        _text: { color: "gray.500" },
+      }}
+      _hover={{
+        background: "gray.100",
+        _text: { color: "gray.600" },
+      }}
       marginBottom={3}
     >
-      <Text color="black" fontSize="3xl" fontWeight="bold" fontFamily="Poppins">
-        {value}
-      </Text>
+      {value}
     </Button>
   );
 }
 
-export function CalculatorOperator({ value }) {
+export function CalculatorOperator({ value, col }) {
   return (
     <Button
-      width={16}
-      height={16}
-      bg="gray.400"
-      borderRadius={5}
-      display="flex"
+      flex={col}
+      bg="gray.500"
+      _text={{ fontWeight: "bold", fontSize: 32, color: "gray.100" }}
+      borderRadius={7}
       alignItems="center"
       justifyContent="center"
-      _pressed={{ background: "gray.500" }}
+      _pressed={{
+        background: "gray.700",
+        _text: { color: "gray.50" },
+      }}
+      _hover={{
+        background: "gray.600",
+        _text: { color: "gray.50" },
+      }}
       marginBottom={3}
     >
       {value}

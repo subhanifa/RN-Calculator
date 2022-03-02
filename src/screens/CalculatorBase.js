@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
-  Heading,
   Box,
   HStack,
   VStack,
   AddIcon,
   MinusIcon,
+  ScrollView,
 } from "native-base";
 import {
   CalculatorButton,
@@ -14,85 +14,68 @@ import {
 } from "../components/CalculatorButtons";
 
 export default function CalculatorBase() {
+  const [operation, setOperation] = useState(null);
+  const [result, setResult] = useState(null);
   return (
-    <Box height="full" bg="gray.300" paddingTop={30} paddingX={4}>
-      <Heading
-        fontFamily="Poppins"
-        size="md"
-        fontWeight="normal"
-        color="darkText"
-        paddingY={5}
-      >
-        Display
-      </Heading>
-
-      <Box
-        marginBottom={8}
-        bg="white"
-        height={20}
+    <Box>
+      <VStack
+        marginBottom={4}
+        flexDir="column"
+        justifyContent="space-between"
+        bg="gray.200"
+        height={32}
         borderRadius={10}
         paddingX={5}
-        justifyContent="center"
+        paddingY={3}
         borderColor="white"
       >
         <Text
           color="black"
-          fontSize="3xl"
+          fontSize="4xl"
           fontWeight="bold"
           fontFamily="Poppins"
         >
-          1
+          {operation}
         </Text>
-      </Box>
+        <Text
+          color="black"
+          fontSize="3xl"
+          fontWeight="bold"
+          textAlign="right"
+          fontFamily="Poppins"
+        >
+          {result}
+        </Text>
+      </VStack>
 
       <VStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={1} />
-          <CalculatorButton value={2} />
-          <CalculatorOperator value={<AddIcon size={5} />} />
-          <CalculatorOperator value={<MinusIcon size={5} />} />
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={"AC"} />
+          <CalculatorButton col={1} value={","} />
         </HStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={3} />
-          <CalculatorButton value={4} />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                /
-              </Text>
-            }
-          />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                *
-              </Text>
-            }
-          />
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={1} />
+          <CalculatorButton col={1} value={2} />
+          <CalculatorOperator col={1} value={"+"} />
+          <CalculatorOperator col={1} value={"-"} />
         </HStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={5} />
-          <CalculatorButton value={6} />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                %
-              </Text>
-            }
-          />
-          <CalculatorOperator
-            value={
-              <Text fontSize="2xl" fontWeight="bold">
-                =
-              </Text>
-            }
-          />
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={3} />
+          <CalculatorButton col={1} value={4} />
+          <CalculatorOperator col={1} value={"/"} />
+          <CalculatorOperator col={1} value={"*"} />
         </HStack>
-        <HStack justifyContent="space-between">
-          <CalculatorButton value={7} />
-          <CalculatorButton value={8} />
-          <CalculatorButton value={9} />
-          <CalculatorButton value={0} />
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={5} />
+          <CalculatorButton col={1} value={6} />
+          <CalculatorOperator col={1} value={"%"} />
+          <CalculatorOperator col={1} value={"="} />
+        </HStack>
+        <HStack justifyContent="space-between" space={3}>
+          <CalculatorButton col={1} value={7} />
+          <CalculatorButton col={1} value={8} />
+          <CalculatorButton col={1} value={9} />
+          <CalculatorButton col={1} value={"0"} />
         </HStack>
       </VStack>
     </Box>
