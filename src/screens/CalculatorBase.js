@@ -8,7 +8,10 @@ import {
   AddIcon,
   MinusIcon,
 } from "native-base";
-import { CalculatorButton, CalculatorOperator } from "../components/CalculatorButtons";
+import {
+  CalculatorButton,
+  CalculatorOperator,
+} from "../components/CalculatorButtons";
 
 export default function CalculatorBase() {
   return (
@@ -44,23 +47,23 @@ export default function CalculatorBase() {
 
       <VStack>
         <HStack justifyContent="space-between">
-          <CalculatorButton val={1} />
-          <CalculatorButton val={2} />
-          <CalculatorOperator val={<AddIcon size={5} />} />
-          <CalculatorOperator val={<MinusIcon size={5} />} />
+          <CalculatorButton value={1} />
+          <CalculatorButton value={2} />
+          <CalculatorOperator value={<AddIcon size={5} />} />
+          <CalculatorOperator value={<MinusIcon size={5} />} />
         </HStack>
         <HStack justifyContent="space-between">
-          <CalculatorButton val={3} />
-          <CalculatorButton val={4} />
+          <CalculatorButton value={3} />
+          <CalculatorButton value={4} />
           <CalculatorOperator
-            val={
+            value={
               <Text fontSize="2xl" fontWeight="bold">
                 /
               </Text>
             }
           />
           <CalculatorOperator
-            val={
+            value={
               <Text fontSize="2xl" fontWeight="bold">
                 *
               </Text>
@@ -68,17 +71,17 @@ export default function CalculatorBase() {
           />
         </HStack>
         <HStack justifyContent="space-between">
-          <CalculatorButton val={5} />
-          <CalculatorButton val={6} />
+          <CalculatorButton value={5} />
+          <CalculatorButton value={6} />
           <CalculatorOperator
-            val={
+            value={
               <Text fontSize="2xl" fontWeight="bold">
                 %
               </Text>
             }
           />
           <CalculatorOperator
-            val={
+            value={
               <Text fontSize="2xl" fontWeight="bold">
                 =
               </Text>
@@ -86,10 +89,10 @@ export default function CalculatorBase() {
           />
         </HStack>
         <HStack justifyContent="space-between">
-          <CalculatorButton val={7} />
-          <CalculatorButton val={8} />
-          <CalculatorButton val={9} />
-          <CalculatorButton val={0} />
+          <CalculatorButton value={7} />
+          <CalculatorButton value={8} />
+          <CalculatorButton value={9} />
+          <CalculatorButton value={0} />
         </HStack>
       </VStack>
     </Box>

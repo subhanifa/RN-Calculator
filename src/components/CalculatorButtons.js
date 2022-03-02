@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Button } from "native-base";
 
-export function CalculatorButton({ val }) {
+export function CalculatorButton({ value }) {
   return (
     <Button
       width={16}
@@ -14,13 +14,13 @@ export function CalculatorButton({ val }) {
       marginBottom={3}
     >
       <Text color="black" fontSize="3xl" fontWeight="bold" fontFamily="Poppins">
-        {val}
+        {value}
       </Text>
     </Button>
   );
 }
 
-export function CalculatorOperator({ val }) {
+export function CalculatorOperator({ value }) {
   return (
     <Button
       width={16}
@@ -33,7 +33,7 @@ export function CalculatorOperator({ val }) {
       _pressed={{ background: "gray.500" }}
       marginBottom={3}
     >
-      {val}
+      {value}
     </Button>
   );
 }
