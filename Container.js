@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, Heading, Box } from "native-base";
-import CalculatorBase from "./src/screens/CalculatorBase";
+import Calculator from "./src/screens/Calculator";
 
 export default function Container() {
   return (
@@ -14,7 +14,7 @@ export default function Container() {
       >
         Waysmath
       </Heading>
-      <CalculatorBase />
+      <Calculator />
     </Box>
   );
 }

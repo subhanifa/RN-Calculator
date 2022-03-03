@@ -53,22 +53,41 @@ export default function App() {
 
   const customColors = {
     primary: {
-      50: "#ecfeff",
-      100: "#cffafe",
-      200: "#a5f3fc",
-      300: "#67e8f9",
-      400: "#22d3ee",
-      500: "#06b6d4",
-      600: "#0891b2",
-      700: "#0e7490",
-      800: "#155e75",
-      900: "#164e63",
+      50: "#fafaf9",
+      100: "#f5f5f4",
+      200: "#e7e5e4",
+      300: "#d6d3d1",
+      400: "#a8a29e",
+      500: "#78716c",
+      600: "#57534e",
+      700: "#44403c",
+      800: "#292524",
+      900: "#1c1917",
     },
   };
 
   // Configuration Native Base Custom Theme
   const theme = extendTheme({
     colors: customColors,
+    components: {
+      Button: {
+        defaultProps: {
+          variant: "unstyled",
+        },
+        baseStyle: {
+          borderRadius: 7,
+          marginBottom: 3,
+          bg: "gray.200",
+          _text: {
+            color: "gray.700",
+            fontWeight: "bold",
+          },
+          _pressed: {
+            bg: "gray.300",
+          },
+        },
+      },
+    },
     fontConfig,
     fonts: {
       Poppins: "Poppins",
