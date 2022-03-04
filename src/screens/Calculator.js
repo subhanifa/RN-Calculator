@@ -14,17 +14,11 @@ export default function Calculator() {
   };
 
   const erase = () => {
-    let array = operation.split("");
-    array = array.splice(-1, 1);
-    alert(array);
+    setOperation(operation.slice(0, -1));
   };
 
   const insertOperator = (value) => {
-    if (operation === 0) {
-      setOperation(value);
-    } else {
-      setOperation(operation + "" + value);
-    }
+    setOperation(operation + "" + value);
   };
 
   const countResult = () => {
@@ -195,10 +189,18 @@ export default function Calculator() {
         </HStack>
 
         <HStack justifyContent="space-between" space={3}>
-          <Button flex={1} _text={{ fontSize: 32 }}>
+          <Button
+            flex={1}
+            _text={{ fontSize: 32 }}
+            onPress={() => insertNumber(0)}
+          >
             0
           </Button>
-          <Button flex={1} _text={{ fontSize: 32 }}>
+          <Button
+            flex={1}
+            _text={{ fontSize: 32 }}
+            onPress={() => insertOperator(".")}
+          >
             .
           </Button>
           <Button
