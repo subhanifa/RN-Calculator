@@ -1,4 +1,4 @@
-import { extendTheme, NativeBaseProvider } from "native-base";
+import { extendTheme, NativeBaseProvider, StatusBar } from "native-base";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 
@@ -9,11 +9,6 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
 
-import {
-  ComicNeue_400Regular,
-  ComicNeue_700Bold,
-} from "@expo-google-fonts/comic-neue";
-
 import Container from "./Container";
 
 export default function App() {
@@ -22,8 +17,6 @@ export default function App() {
     Poppins_400Regular_Italic,
     Poppins_600SemiBold,
     Poppins_700Bold,
-    ComicNeue_400Regular,
-    ComicNeue_700Bold,
   });
 
   const fontConfig = {
@@ -37,14 +30,6 @@ export default function App() {
       },
       700: {
         normal: "Poppins_700Bold",
-      },
-    },
-    ComicNeue: {
-      400: {
-        normal: "ComicNeue_400Regular",
-      },
-      700: {
-        normal: "ComicNeue_700Bold",
       },
     },
   };
@@ -65,7 +50,7 @@ export default function App() {
   };
 
   // Configuration Native Base Custom Theme
-  const theme = extendTheme({
+  const customTheme = extendTheme({
     colors: customColors,
     components: {
       Button: {
@@ -73,6 +58,8 @@ export default function App() {
           variant: "unstyled",
         },
         baseStyle: {
+          width: 12,
+          height: 12,
           borderRadius: 7,
           marginBottom: 3,
           bg: "gray.200",
@@ -89,7 +76,6 @@ export default function App() {
     fontConfig,
     fonts: {
       Poppins: "Poppins",
-      ComicNeue: "ComicNeue",
     },
     config: {
       initialColorMode: "dark",
@@ -100,7 +86,8 @@ export default function App() {
     return <AppLoading />;
   } else {
     return (
-      <NativeBaseProvider theme={theme}>
+      <NativeBaseProvider theme={customTheme}>
+        <StatusBar backgroundColor="white" barStyle="dark-content" />
         <Container />
       </NativeBaseProvider>
     );

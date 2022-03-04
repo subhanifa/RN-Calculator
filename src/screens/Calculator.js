@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, Box, HStack, VStack, Button } from "native-base";
+import { Text, HStack, VStack, Button, ScrollView } from "native-base";
 
 export default function Calculator() {
   const [operation, setOperation] = useState(0);
@@ -27,14 +27,13 @@ export default function Calculator() {
   };
 
   return (
-    <Box>
+    <ScrollView backgroundColor="white">
       <VStack
         marginBottom={4}
         flexDir="column"
         justifyContent="space-between"
         bg="gray.200"
         height={32}
-        borderRadius={10}
         paddingX={5}
         paddingY={3}
         borderColor="white"
@@ -53,11 +52,11 @@ export default function Calculator() {
         </Text>
       </VStack>
 
-      <VStack>
+      <VStack marginX={5}>
         <HStack justifyContent="space-between" space={3}>
           <Button
             flex={1}
-            _text={{ fontSize: 24, color: "white" }}
+            _text={{ fontSize: 16, color: "white" }}
             bg="gray.400"
             onPress={() => {
               setOperation(0);
@@ -68,7 +67,7 @@ export default function Calculator() {
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => erase()}
           >
@@ -76,7 +75,7 @@ export default function Calculator() {
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => insertOperator("(")}
           >
@@ -84,7 +83,7 @@ export default function Calculator() {
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => insertOperator(")")}
           >
@@ -95,28 +94,28 @@ export default function Calculator() {
         <HStack justifyContent="space-between" space={3}>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(1)}
           >
             1
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(2)}
           >
             2
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(3)}
           >
             3
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => insertOperator("+")}
           >
@@ -127,28 +126,28 @@ export default function Calculator() {
         <HStack justifyContent="space-between" space={3}>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(4)}
           >
             4
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(5)}
           >
             5
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(6)}
           >
             6
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => insertOperator("-")}
           >
@@ -159,28 +158,28 @@ export default function Calculator() {
         <HStack justifyContent="space-between" space={3}>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(7)}
           >
             7
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(8)}
           >
             8
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(9)}
           >
             9
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => insertOperator("*")}
           >
@@ -191,21 +190,21 @@ export default function Calculator() {
         <HStack justifyContent="space-between" space={3}>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertNumber(0)}
           >
             0
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32 }}
+            _text={{ fontSize: 20 }}
             onPress={() => insertOperator(".")}
           >
             .
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => countResult()}
           >
@@ -213,7 +212,7 @@ export default function Calculator() {
           </Button>
           <Button
             flex={1}
-            _text={{ fontSize: 32, color: "white" }}
+            _text={{ fontSize: 20, color: "white" }}
             bg="gray.400"
             onPress={() => insertOperator("/")}
           >
@@ -221,6 +220,6 @@ export default function Calculator() {
           </Button>
         </HStack>
       </VStack>
-    </Box>
+    </ScrollView>
   );
 }
