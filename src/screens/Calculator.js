@@ -3,7 +3,7 @@ import { Text, Box, HStack, VStack, Button } from "native-base";
 
 export default function Calculator() {
   const [operation, setOperation] = useState(0);
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState(null);
 
   const insertNumber = (value) => {
     if (operation === 0) {
@@ -65,7 +65,10 @@ export default function Calculator() {
             flex={1}
             _text={{ fontSize: 24, color: "white" }}
             bg="gray.400"
-            onPress={() => setOperation(0)}
+            onPress={() => {
+              setOperation(0);
+              setResult(null);
+            }}
           >
             AC
           </Button>
