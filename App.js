@@ -58,9 +58,9 @@ export default function App() {
           variant: "unstyled",
         },
         baseStyle: {
-          width: 12,
-          height: 12,
-          borderRadius: 7,
+          width: 10,
+          height: 20,
+          borderRadius: 100,
           marginBottom: 3,
           bg: "gray.200",
           _text: {

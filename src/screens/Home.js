@@ -2,7 +2,7 @@ import React from "react";
 import { Text, VStack, ScrollView } from "native-base";
 import { ListItem } from "react-native-elements";
 
-export default function ToDoList() {
+export default function Home() {
   return (
     <ScrollView backgroundColor="white">
       <Text color="gray.500" fontSize="md" padding={4} fontFamily="Poppins">

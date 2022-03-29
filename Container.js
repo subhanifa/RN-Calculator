@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useTheme } from "native-base";
 
-import ToDoList from "./src/screens/ToDoList";
+import Home from "./src/screens/Home";
 import Calculator from "./src/screens/Calculator";
 
 // Create Stack Navigation
@@ -27,8 +27,8 @@ function NativeWays() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "To Do List") {
-            iconName = focused ? "document-text" : "document-text-outline";
+          if (route.name === "Home") {
+            iconName = focused ? "md-home" : "md-home-outline";
           } else if (route.name === "Calculator") {
             iconName = focused ? "ios-calculator" : "ios-calculator-outline";
           }
@@ -41,8 +41,8 @@ function NativeWays() {
         tabBarInactiveBackgroundColor: "white",
       })}
     >
-      <Tab.Screen name="To Do List" component={ToDoList} />
       <Tab.Screen name="Calculator" component={Calculator} />
+      <Tab.Screen name="Home" component={Home} />
     </Tab.Navigator>
   );
 }
